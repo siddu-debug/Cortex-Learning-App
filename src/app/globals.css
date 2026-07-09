@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-fraunces: 'Fraunces', serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-moss-100 text-moss-900;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.moss.500');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .paper-grid {
+    background-image: radial-gradient(circle, #d2cdbc 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .prose-cortex {
+    @apply max-w-none text-ink-soft leading-relaxed;
+  }
+  .prose-cortex h1 {
+    @apply font-display text-3xl text-ink mt-8 mb-4 font-medium;
+  }
+  .prose-cortex h2 {
+    @apply font-display text-2xl text-ink mt-8 mb-3 font-medium;
+  }
+  .prose-cortex h3 {
+    @apply font-display text-xl text-ink mt-6 mb-2 font-medium;
+  }
+  .prose-cortex p {
+    @apply my-3;
+  }
+  .prose-cortex ul {
+    @apply list-disc pl-6 my-3 space-y-1;
+  }
+  .prose-cortex ol {
+    @apply list-decimal pl-6 my-3 space-y-1;
+  }
+  .prose-cortex code {
+    @apply bg-paper-dim text-moss-700 px-1.5 py-0.5 rounded font-mono text-[0.85em];
+  }
+  .prose-cortex pre {
+    @apply bg-ink text-paper rounded-lg p-4 overflow-x-auto my-4 text-sm;
+  }
+  .prose-cortex pre code {
+    @apply bg-transparent text-paper p-0;
+  }
+  .prose-cortex blockquote {
+    @apply border-l-2 border-moss-500 pl-4 italic text-ink-soft my-4;
+  }
+  .prose-cortex a {
+    @apply text-moss-600 underline decoration-moss-300 underline-offset-2 hover:text-moss-700;
+  }
+}
