@@ -20,19 +20,23 @@ import { Badge } from '@/components/ui/badge';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-paper relative overflow-hidden">
       <Navbar />
 
+      {/* Ambient background glows */}
+      <div className="absolute top-[10%] left-[5%] w-[450px] h-[450px] bg-gradient-to-tr from-moss-200/20 to-emerald-300/10 rounded-full filter blur-[100px] pointer-events-none -z-10 animate-pulse duration-3000" />
+      <div className="absolute top-[35%] right-[5%] w-[500px] h-[500px] bg-gradient-to-br from-violet-200/20 to-rose-200/10 rounded-full filter blur-[120px] pointer-events-none -z-10" />
+
       {/* HERO */}
-      <section className="mx-auto max-w-6xl px-5 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
+      <section className="mx-auto max-w-6xl px-5 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center relative">
         <div className="animate-fadeUp">
-          <Badge tone="moss" className="mb-5">
-            <Sparkles className="w-3 h-3" /> now generating from PDFs, URLs & repos
+          <Badge tone="moss" className="mb-5 border-moss-200 bg-moss-50/50 text-moss-700 shadow-sm">
+            <Sparkles className="w-3 h-3 text-moss-500 animate-spin" /> now generating from PDFs, URLs & repos
           </Badge>
-          <h1 className="font-display text-4xl sm:text-5xl leading-[1.08] text-ink font-medium tracking-tight">
+          <h1 className="font-display text-4xl sm:text-5xl leading-[1.08] text-ink font-semibold tracking-tight">
             Courses aren&apos;t files.
             <br />
-            They&apos;re <span className="italic text-moss-600">views</span> of a
+            They&apos;re <span className="italic text-gradient-primary">views</span> of a
             living graph.
           </h1>
           <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-md">
@@ -40,26 +44,26 @@ export default function HomePage() {
             in a shared knowledge graph. Fork it, improve it, and let a tutor teach it that
             never strays from the source.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/courses/new" className={buttonVariants('primary', 'lg')}>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link href="/courses/new" className={buttonVariants('primary', 'lg', 'bg-gradient-to-r from-moss-600 via-emerald-600 to-violet-600 border-0 hover:from-moss-700 hover:to-violet-700 text-white shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-all')}>
               Generate a course <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/explore" className={buttonVariants('outline', 'lg')}>
+            <Link href="/explore" className={buttonVariants('outline', 'lg', 'hover:border-violet-300 hover:text-violet-700 hover:bg-violet-50/30 hover:scale-[1.02] active:scale-[0.98] transition-all')}>
               Explore the graph
             </Link>
           </div>
           <div className="mt-8 flex items-center gap-5 text-xs font-mono text-ink-faint">
-            <span>free to learn</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-moss-500" />free to learn</span>
             <span className="w-1 h-1 rounded-full bg-border-strong" />
-            <span>free to publish</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-violet-500" />free to publish</span>
             <span className="w-1 h-1 rounded-full bg-border-strong" />
-            <span>fork anything public</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-gold-500" />fork anything public</span>
           </div>
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-6 bg-gradient-to-br from-moss-50 to-violet-50 rounded-[2rem] -z-10" />
-          <Card className="p-6 border-border-strong">
+          <div className="absolute -inset-6 bg-gradient-to-br from-moss-300/10 via-violet-300/15 to-gold-300/10 rounded-[2.5rem] filter blur-2xl -z-10 animate-pulse duration-5000" />
+          <Card className="p-6 border-border-strong glass-card shadow-glow">
             <KnowledgeGraphHero className="w-full h-auto" />
           </Card>
         </div>

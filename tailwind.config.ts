@@ -60,6 +60,11 @@ const config: Config = {
       boxShadow: {
         card: '0 1px 2px rgba(23,27,33,0.04), 0 1px 12px rgba(23,27,33,0.05)',
         raised: '0 2px 4px rgba(23,27,33,0.06), 0 8px 24px rgba(23,27,33,0.08)',
+        glow: '0 0 25px rgba(95, 166, 148, 0.25), 0 0 50px rgba(156, 141, 208, 0.2)',
+        'glow-violet': '0 0 25px rgba(156, 141, 208, 0.35)',
+        'glow-moss': '0 0 25px rgba(95, 166, 148, 0.35)',
+        'glow-gold': '0 0 25px rgba(228, 200, 102, 0.35)',
+        'glow-rust': '0 0 25px rgba(182, 90, 60, 0.35)',
       },
       keyframes: {
         pulseNode: {

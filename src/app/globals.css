@@ -85,4 +85,29 @@
   .prose-cortex a {
     @apply text-moss-600 underline decoration-moss-300 underline-offset-2 hover:text-moss-700;
   }
+
+  /* Premium Colorful UI Classes */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-moss-500 via-violet-600 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-moss {
+    @apply bg-gradient-to-r from-moss-600 to-moss-900 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-violet {
+    @apply bg-gradient-to-r from-violet-600 to-violet-900 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-card hover:shadow-raised transition-all duration-300;
+  }
+
+  .glass-card-dark {
+    @apply bg-ink/90 backdrop-blur-lg border border-ink/10 shadow-card hover:shadow-raised transition-all duration-300;
+  }
+
+  .bg-glow-blob {
+    @apply absolute w-[400px] h-[400px] rounded-full filter blur-[100px] opacity-20 pointer-events-none mix-blend-multiply animate-pulse;
+  }
 }
