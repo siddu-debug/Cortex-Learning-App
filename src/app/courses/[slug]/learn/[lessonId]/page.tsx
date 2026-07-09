@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Clock, MessagesSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, MessagesSquare, FileQuestion } from 'lucide-react';
 import { Navbar } from '@/components/layout/navbar';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 import { MarkCompleteButton } from '@/components/course/mark-complete-button';
@@ -85,8 +85,14 @@ export default async function LessonPage({
             </span>
             <MarkCompleteButton courseId={course.id} lessonId={lesson.id} initialComplete={complete} />
             <Link
+              href={`/courses/${course.slug}/learn/${lesson.id}/quiz`}
+              className="flex items-center gap-1.5 text-xs text-ink-faint hover:text-violet-700 border-l border-border pl-4"
+            >
+              <FileQuestion className="w-3.5 h-3.5 text-violet-500" /> Take Quiz
+            </Link>
+            <Link
               href={`/courses/${course.slug}/tutor`}
-              className="flex items-center gap-1.5 text-xs text-ink-faint hover:text-moss-700"
+              className="flex items-center gap-1.5 text-xs text-ink-faint hover:text-moss-700 border-l border-border pl-4"
             >
               <MessagesSquare className="w-3.5 h-3.5" /> Ask the tutor
             </Link>
